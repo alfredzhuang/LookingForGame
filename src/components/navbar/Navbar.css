@@ -13,6 +13,10 @@
     backdrop-filter: blur(10px);
 }
 
+a {
+    text-decoration: none;
+}
+
 .navbar-container {
     display: flex;
     justify-content: space-between;
