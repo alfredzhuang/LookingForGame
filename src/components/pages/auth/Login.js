@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from "../../navbar/Navbar";
+import { Link } from 'react-router-dom';
 import "./Login.css"
 
 function Login() {
@@ -26,7 +27,9 @@ function Login() {
                             </div>
                         <div>
                             <button className="login-button">
-                                Login
+                                <Link to="/homepage">
+                                    Login
+                                </Link>
                             </button>
                         </div>
                     </div>

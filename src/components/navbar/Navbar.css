@@ -31,6 +31,11 @@ a {
     text-decoration: none;
 }
 
+
+h1{
+    color: var(--accent-color);
+}
+
 .navbar-links {
     display: flex;
     align-items: center;
@@ -55,4 +60,13 @@ a {
     padding: .75rem 1rem;
     line-height: 1;
     margin-left: 15px;
+}
+
+.navbar-login-button:hover, .navbar-signin-button:hover{
+    background-color: var(--accent-color-tint);
+}
+
+.navbar-link-item {
+    color: var(--accent-color);
+    padding: 16px;
 }
