@@ -2,7 +2,18 @@ import React from 'react'
 import Navbar from "../../navbar/Navbar";
 import "./Signup.css"
 
-function Signup() {
+let Signup = (props) => {
+
+    let {
+        email,
+        setEmail,
+        password,
+        setPassword,
+        signUp, 
+        emailError,
+        passwordError
+    } = props;
+
     return (
         <div className="signup">
             <Navbar />
@@ -12,26 +23,28 @@ function Signup() {
                         <h2>Join LFG today</h2>
                     </div>
                     <div className="signup-form">
-                        <div>
+                        {/* <div>
                             <div className="signup-input-container username">
                                 <label className="signup-label" for="signup-username">Username</label>
                                 <input placeholder="Enter your Username" id= "signup-username" className="input" type="text"></input>
                             </div>
-                        </div>
+                        </div> */}
                         <div>
                             <div className="signup-input-container email">
-                                <label className="signup-label" for="signup-email">Email</label>
-                                <input placeholder="Enter your email" id= "signup-email" className="input" type="text"></input>
+                                <label className="signup-label" htmlFor="signup-email">Email</label>
+                                <input placeholder="Enter your email" id= "signup-email" className="input" type="text" autoFocus required value = {email} onChange={(e) => setEmail(e.target.value)}></input>
+                                <p className = "error">{emailError}</p>
                             </div>
                         </div>
                             <div className="signup-last">
                                 <div className="signup-input-container password">
-                                    <label className="signup-label" for="signup-password">Password</label>
-                                    <input placeholder="Enter your password" id= "signup-password" className="input" type="text"></input>
+                                    <label className="signup-label" htmlFor="signup-password">Password</label>
+                                    <input placeholder="Enter your password" id= "signup-password" className="input" type="password" required value = {password} onChange={(e) => setPassword(e.target.value)}></input>
+                                    <p className = "error">{passwordError}</p>
                                 </div>
                             </div>
                         <div>
-                            <button className="signup-button">
+                            <button onClick={signUp} className="signup-button">
                                 Sign Up
                             </button>
                         </div>

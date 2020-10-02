@@ -5,7 +5,6 @@
     background-color: var(--black);
     color: #fff;
     min-height: 100vh;
-    pointer-events: auto;
 }
 
 .content {
@@ -51,11 +50,6 @@
     padding: 1rem;
 }
 
-.input:focus{
-    outline: 2px solid var(--accent-color);
-    background-color: #000;
-}
-
 .login-label {
     margin-bottom: 0.3rem;
 }
@@ -68,7 +62,6 @@
     padding: 1rem 1rem;
     line-height: 1;
     width: 100%;
-    pointer-events: auto;
     user-select: auto;
     cursor: pointer;
     outline: none;

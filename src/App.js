@@ -8,23 +8,6 @@ import firebase from './firebase';
 
 
 function App() {
-
-  let renderMergedProps = (component, ...rest) => {
-    let finalProps = Object.assign({}, ...rest);
-    return (
-      React.createElement(component, finalProps)
-    );
-  }
-  
-  let PropsRoute = ({ component, ...rest }) => {
-    return (
-      <Route {...rest} render={routeProps => {
-        return renderMergedProps(component, routeProps, rest);
-      }}/>
-    );
-  }
-
-
   let [user, setUser] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
@@ -100,22 +83,26 @@ function App() {
       <Router>
       <Switch>
         <Route path='/' exact component={Home} />
-        <PropsRoute path='/signup' component={Signup} 
-          email = {email}
-          setEmail = {setEmail}
-          password = {password}
-          setPassword = {setPassword}
-          signUp = {signUp}
-          emailError = {emailError}
-          passwordError = {passwordError}/>
-        <PropsRoute path='/login' component={Login} 
-          email = {email}
+        <Route path='/signup' exact render={() =>
+        <Signup 
+        email = {email}
+        setEmail = {setEmail}
+        password = {password}
+        setPassword = {setPassword}
+        signUp = {signUp}
+        emailError = {emailError}
+        passwordError = {passwordError}
+        ></Signup>}/>
+        <Route path='/login' exact render={() => 
+        <Login
+        email = {email}
           setEmail = {setEmail}
           password = {password}
           setPassword = {setPassword}
           signIn = {signIn}
           emailError = {emailError}
-          passwordError = {passwordError}/>
+          passwordError = {passwordError}
+        ></Login>}/>
       </Switch>
     </Router>
     </div>

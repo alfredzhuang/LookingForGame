@@ -14,14 +14,6 @@ let Login = (props) => {
         passwordError
     } = props;
 
-    function handleEmail(e) {
-      setEmail(e.target.value);
-    }
-
-    function handlePassword(e) {
-      setPassword(e.target.value);
-    }
-
     return (
     <div className="login">
         <Navbar />
@@ -35,18 +27,13 @@ let Login = (props) => {
                         <div className="login-input-container email">
                             <label className="login-label" htmlFor="login-email">Email</label>
                             <input 
-                              
-                              /**ref={inputRef}
-                              key="login-email-key" */
                               placeholder="Enter your email" 
                               id= "login-email" 
                               className="input" 
-                              type="text"
-                              autoFocus 
+                              type="text" 
                               required 
                               value={email}
-                              /**onClick={setInputFocus} */
-                              onChange={handleEmail}>
+                              onChange={(e) => setEmail(e.target.value)}>
                             </input>
                             <p className = "error">{emailError}</p>
                         </div>
@@ -55,15 +42,12 @@ let Login = (props) => {
                             <div className="login-input-container password">
                                 <label className="login-label" htmlFor="login-password">Password</label>
                                 <input 
-                                  /** ref={inputRef}
-                                  key="login-password-key" */
                                   placeholder="Enter your password" 
                                   id= "login-password" className="input" 
                                   type="password" 
                                   required 
                                   value={password} 
-                                  /** onClick={setInputFocus}*/
-                                  onChange={handlePassword}>
+                                  onChange={(e) => setPassword(e.target.value)}>
                                 </input>
                                 <p className = "error">{passwordError}</p>
                             </div>
