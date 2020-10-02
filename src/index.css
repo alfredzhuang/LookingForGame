@@ -19,7 +19,9 @@ code {
 }
 
 :root {
-  --black: #10002B;
+  --black: #0E0E10;
+  --acent-color-dark: #10002B;
   --accent-color: #F04DFE;
+  --accent-color-tint: rgba(239, 77, 254, 0.3);
   --accent-color-light: #E0AAFF;
 }

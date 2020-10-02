@@ -12,12 +12,12 @@ function Navbar() {
                 <div className="navbar-links">
                     <ul>
                         <Link to="/signup">
-                            <li className="signin-button">
+                            <li className="navbar-signin-button">
                                 <p>Sign Up</p>
                             </li>
                         </Link>
                         <Link to="/login">
-                            <li className="login-button">
+                            <li className="navbar-login-button">
                                 <p>Log In</p>
                             </li>
                         </Link>

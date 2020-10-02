@@ -47,7 +47,7 @@ a {
     margin: 0px 4px;
 }
 
-.login-button, .signin-button {
+.navbar-login-button, .navbar-signin-button {
     color: var(--accent-color);
     background-color: transparent;
     border: 1px solid var(--accent-color);
