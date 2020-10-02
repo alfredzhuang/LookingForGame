@@ -9,6 +9,7 @@
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -44,5 +45,5 @@
   "bugs": {
     "url": "https://github.com/alfredzhuang/LookingForGame/issues"
   },
-  "homepage": "https://github.com/alfredzhuang/LookingForGame#readme"
+  "homepage": "."
 }
