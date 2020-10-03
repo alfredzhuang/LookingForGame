@@ -10,6 +10,7 @@ import FindGroup from "./components/pages/FindGroup";
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
 
+
 function App() {
   let [user, setUser] = useState("");
   let [email, setEmail] = useState("");
