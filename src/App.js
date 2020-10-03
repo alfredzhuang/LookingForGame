@@ -1,4 +1,4 @@
-import React, { useEffect, useState  } from 'react';
+import React, { Component, useEffect, useState  } from 'react';
 import './App.css';
 import Home from "./components/pages/Home";
 import Signup from "./components/pages/auth/Signup";
@@ -7,9 +7,8 @@ import Homepage from "./components/pages/Homepage";
 import Browse from "./components/pages/Browse";
 import Create from "./components/pages/Create";
 import FindGroup from "./components/pages/FindGroup";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
-
 
 function App() {
   let [user, setUser] = useState("");
@@ -30,24 +29,26 @@ function App() {
 
   let signIn = () => {
     clearErrors();
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .catch(err => {
-      switch(err.code) {
-        case "auth/user-not-found":
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-          setEmailError(err.message);
-          break;
-        case "auth/wrong-password":
-          setPasswordError(err.message);
-          break;
-      }
+     firebase.auth().signInWithEmailAndPassword(email, password)
+     .catch(err => {
+       switch(err.code) {
+         case "auth/user-not-found":
+         case "auth/invalid-email":
+         case "auth/user-disabled":
+           setEmailError(err.message);
+           break;
+         case "auth/wrong-password":
+           setPasswordError(err.message);
+           break;
+       }
     });
+    console.log("logged in");
+    window.location="homepage";
   };
 
   let signUp = () => {
     clearErrors();
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
     .catch(err => {
       switch(err.code) {
         case "auth/email-already-in-use":
@@ -60,10 +61,6 @@ function App() {
       }
     });
   };
-
-  let logOut = () => {
-    firebase.auth().signOut();
-  }
 
   let authState = () => {
     firebase.auth().onAuthStateChanged(user => {
