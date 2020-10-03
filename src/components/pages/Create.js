@@ -5,6 +5,8 @@ import "./Create.css"
 let create = (props) => {
 
     let {
+        userData,
+    changeFile,
       createGroup,
       name,
       setName,
@@ -19,7 +21,7 @@ let create = (props) => {
     return (
         <div className="create">
          	<div className="section">
-             <NavbarUser />
+             <NavbarUser userData = {userData}/>
              <div className="content">
              <div className="create-container">
                  <div className="create-header">
@@ -85,6 +87,9 @@ let create = (props) => {
                                     onChange={(e) => setDescription(e.target.value)}></input>
                              </div>
                          </div>
+                        <div>
+                            <input type = "file" onChange = {changeFile}/>
+                        </div>
                      <div>
                          <button onClick = {createGroup} className="create-button">
                              Create Group

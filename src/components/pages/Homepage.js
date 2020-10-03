@@ -2,11 +2,16 @@ import React from 'react'
 import NavbarUser from "../navbar/NavbarUser";
 import "./Homepage.css"
 
-function homepage() {
+function homepage(prop) {
+
+    let {
+        userData
+    } = prop;
+
     return (
         <div className="homepage">
             <div className="section">
-                <NavbarUser />
+                <NavbarUser userData = {userData}/>
                 <div className="homepage-inner">
                     <h2>Your Groups</h2>
                     <div className="homepage-content">
