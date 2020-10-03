@@ -23,16 +23,10 @@ let Signup = (props) => {
                         <h2>Join LFG today</h2>
                     </div>
                     <div className="signup-form">
-                        {/* <div>
-                            <div className="signup-input-container username">
-                                <label className="signup-label" for="signup-username">Username</label>
-                                <input placeholder="Enter your Username" id= "signup-username" className="input" type="text"></input>
-                            </div>
-                        </div> */}
                         <div>
                             <div className="signup-input-container email">
                                 <label className="signup-label" htmlFor="signup-email">Email</label>
-                                <input placeholder="Enter your email" id= "signup-email" className="input" type="text" autoFocus required value = {email} onChange={(e) => setEmail(e.target.value)}></input>
+                                <input placeholder="Enter your email" id= "signup-email" className="input" type="text" required value = {email} onChange={(e) => setEmail(e.target.value)}></input>
                                 <p className = "error">{emailError}</p>
                             </div>
                         </div>

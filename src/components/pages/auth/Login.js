@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from "../../navbar/Navbar";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import "./Login.css"
 
 let Login = (props) => {
@@ -55,9 +55,7 @@ let Login = (props) => {
                        </div>
                         <div>
                             <button onClick={signIn} className="login-button">
-                                <Link to="/homepage">
-                                    Login
-                                </Link>
+                                Login
                             </button>
                         </div>
                     </div>

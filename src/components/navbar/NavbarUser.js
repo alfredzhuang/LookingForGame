@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "./Navbar.css"
-
+import firebase from "../../firebase"
 
 function NavbarUser() {
+
+    let logOut = () => {
+        firebase.auth().signOut();
+      }
+
     return (
     <div className="navbar">
         <nav className="navbar-container">
@@ -29,9 +34,11 @@ function NavbarUser() {
                             <p>Create Group</p>
                         </li>
                     </Link>
-                    <li className="navbar-login-button">
-                        <p>Log Out</p>
-                    </li>
+                    <Link to="/login">
+                        <li onClick = {logOut} className="navbar-login-button">
+                            <p>Log Out</p>
+                        </li>
+                    </Link>
                 </ul>
             </div>
         </nav>
