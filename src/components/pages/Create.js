@@ -97,7 +97,7 @@ let create = (props) => {
                             </div>
                         </div>
                         <div className="create-input-container create-last">
-                            <label className="create-label" htmlFor="group-img">Upload a Group Image</label>
+                            <label className="create-" htmlFor="group-img">Upload a Group Image</label>
                             <input id="group-img" type="file" onChange={changeFile}/>
                         </div>
                         <div>

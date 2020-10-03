@@ -8,7 +8,7 @@
     pointer-events: auto;
 }
 
-.content {
+.signup .content {
     max-height: 100vh;
     position: absolute;
     margin-left: auto;
