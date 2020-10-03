@@ -5,6 +5,7 @@ import "./Signup.css"
 let Signup = (props) => {
 
     let {
+        keyPressSignUp,
         changeFile,
         username,
         setUserName,
@@ -46,7 +47,8 @@ let Signup = (props) => {
                                     type="text" 
                                     required 
                                     value={username} 
-                                    onChange={(e) => setUserName(e.target.value)}></input>
+                                    onChange={(e) => setUserName(e.target.value)}
+                                    onKeyPress = {keyPressSignUp}></input>
                             </div>
                         </div> 
                         <div>
@@ -61,7 +63,8 @@ let Signup = (props) => {
                                     className="input" 
                                     type="text" 
                                     required 
-                                    value = {email} onChange={(e) => setEmail(e.target.value)}></input>
+                                    value = {email} onChange={(e) => setEmail(e.target.value)}
+                                    onKeyPress = {keyPressSignUp}></input>
                                 <p className = "error">{emailError}</p>
                             </div>
                         </div>

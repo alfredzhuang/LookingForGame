@@ -5,6 +5,7 @@ import "./Login.css"
 let Login = (props) => {
 
     let {
+        keyPressSignIn,
         email,
         setEmail,
         password,
@@ -40,7 +41,8 @@ let Login = (props) => {
                                     type="text" 
                                     required 
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}>
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    onKeyPress = {keyPressSignIn}>
                                 </input>
                                 <p className = "error">{emailError}</p>
                             </div>
@@ -54,7 +56,8 @@ let Login = (props) => {
                                         type="password" 
                                         required 
                                         value={password} 
-                                        onChange={(e) => setPassword(e.target.value)}>
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        onKeyPress = {keyPressSignIn}>
                                     </input>
                                     <p className = "error">{passwordError}</p>
                                 </div>

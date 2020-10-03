@@ -40,6 +40,8 @@ function App() {
 
   let db = firebase.firestore();
 
+
+
   let createGroup = () => {
     let owner = user ? user.uid : 'unknown';
     let ownerEmail = user ? user.email : 'unknown';
@@ -142,6 +144,18 @@ function App() {
     });
   };
 
+  let keyPressSignIn = (event) => {
+    if(event.key === 'Enter') {
+      signIn();
+    }
+  };
+
+  let keyPressSignUp = (event) => {
+    if(event.key === 'Enter') {
+      signUp();
+    }
+  };
+
   useEffect(() => {
     authState();
   }, []);
@@ -154,6 +168,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/signup' exact render={() =>
         <Signup 
+        keyPressSignUp = {keyPressSignUp}
         changeFile = {changeFile}
         username = {username}
         setUserName = {setUserName}
@@ -167,13 +182,14 @@ function App() {
         ></Signup>}/>
         <Route path='/login' exact render={() => 
         <Login
+        keyPressSignIn = {keyPressSignIn}
         email = {email}
-          setEmail = {setEmail}
-          password = {password}
-          setPassword = {setPassword}
-          signIn = {signIn}
-          emailError = {emailError}
-          passwordError = {passwordError}
+        setEmail = {setEmail}
+        password = {password}
+        setPassword = {setPassword}
+        signIn = {signIn}
+        emailError = {emailError}
+        passwordError = {passwordError}
         ></Login>}/>
         <Route path='/homepage' exact component={Homepage}/>
         <Route path='/browse' exact component={Browse}/>
