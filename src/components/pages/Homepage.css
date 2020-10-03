@@ -16,43 +16,7 @@
     width: 100%;
 }
 
-
-.homepage-content {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.homepage-content .flex-container {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-}
-
-.flex-container h3{
-    font-size: var(--fz-xs);
-    margin: 10px;
-    margin-left: 0px;
-    overflow: hidden;
-    max-width: 170px;
-    white-space: nowrap;
-}
-
 .homepage-inner h2 {
     margin: 40px 0px;
 }
 
-.flex-container .flex-fill{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    max-height: 250px;
-    max-width: 180px;
-}
-
-.flex-container .flex-img {
-    object-fit: cover;
-    width: 400px;
-    height: 400px;
-}

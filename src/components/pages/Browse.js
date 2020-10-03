@@ -7,9 +7,9 @@ function Browse() {
         <div className="browse">
             <div className="section">
                 <NavbarUser />
-                <div className="homepage-inner">
+                <div className="browse-inner">
                     <h2>Browse</h2>
-                    <div className="homepage-content">
+                    <div className="browse-content">
                         <div className="flex-container">
                             <div className="flex-fill">
                                 <img className="flex-img" src="/images/Among Us.jpg" alt="hello"/>

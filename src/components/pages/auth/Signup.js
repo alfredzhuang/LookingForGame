@@ -68,27 +68,31 @@ let Signup = (props) => {
                                 <p className = "error">{emailError}</p>
                             </div>
                         </div>
-                            <div className="signup-last">
+                            <div>
                                 <div className="signup-input-container password">
                                     <label 
                                         className="signup-label" 
                                         htmlFor="signup-password">Password</label>
                                     <input 
                                         placeholder="Enter your password" 
-                                        id= "signup-password" 
+                                        id="signup-password" 
                                         className="input" 
                                         type="password" 
                                         required 
-                                        value = {password} 
+                                        value={password} 
                                         onChange={(e) => setPassword(e.target.value)}></input>
-                                    <p className = "error">{passwordError}</p>
+                                    <p className="error">{passwordError}</p>
                                 </div>
                             </div>
-                        <div>
-                            <input type = "file" onChange = {changeFile}/>
+                        <div className="signup-last">
+                            <label
+                                className="signup-label" 
+                                htmlFor="signup-photo">
+                                Upload Profile Picture</label>
+                            <input id="signup-photo" className="inputPhoto" type="file" onChange={changeFile}></input>
                         </div>
                         <div>
-                            <button onClick= {signUp} className="signup-button">
+                            <button onClick={signUp} className="signup-button">
                                 Sign Up
                             </button>
                         </div>
