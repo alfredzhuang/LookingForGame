@@ -19,6 +19,13 @@ let Signup = (props) => {
     return (
         <div className="signup">
             <Navbar />
+            <div className="home-container">
+                <div className="flex-fill">
+                    <div className="home-image">
+                        <img className="background-img" src="images/LFGbackground.png" alt="hello" />
+                    </div>
+                </div>
+            </div>
             <div className="content">
                 <div className="signup-container">
                     <div className="signup-header">

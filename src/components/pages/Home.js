@@ -12,7 +12,7 @@ function Home() {
             <div className="home-container">
                 <div className="flex-fill">
                     <div className="home-image">
-                        <img src="images/LFGbackground.png" alt="hello" />
+                        <img className="background-img" src="images/LFGbackground.png" alt="hello" />
                     </div>
                 </div>
             </div>

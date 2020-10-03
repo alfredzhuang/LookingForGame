@@ -9,19 +9,27 @@
 }
 
 .content {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
     padding: 100px 150px;
     margin: 0 auto;
-    width: 700px
+    width: 700px;
+    z-index: 20;
 }
 
 .signup-container {
-    background-color:rgba(255, 255, 255, 0.065);
+    background-color:rgba(30,30,10);
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
     max-width: 42rem;
     padding: 3rem 3rem;
+    text-align: left;
 }
 
 .signup-header {

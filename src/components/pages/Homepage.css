@@ -36,7 +36,7 @@ h3{
     margin-left: 0px;
 }
 
-.flex-fill{
+.flex-container .flex-fill{
     display: flex;
     justify-content: center;
     align-items: flex-start;
