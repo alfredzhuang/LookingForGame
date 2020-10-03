@@ -43,6 +43,7 @@ function App() {
        }
     });
     console.log("logged in");
+    window.location="homepage";
   };
 
   let signUp = () => {
