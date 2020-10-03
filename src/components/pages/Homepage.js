@@ -5,6 +5,7 @@ import "./Homepage.css"
 function homepage(prop) {
 
     let {
+        groupData,
         userData
     } = prop;
 
@@ -55,6 +56,15 @@ function homepage(prop) {
                                 <img className="flex-img" src="/images/spiritblossom.jpg" alt="hello"/>
                             </div>
                             <h3>League of Legends</h3>
+                        </div>
+                            <div>
+                                <h1>Groups</h1>
+                                {groupData.map((x) => (
+                                <div key = {x.discord}>
+                                <h2>{x.name}</h2>
+                        <p>{x.description}</p>
+                        </div>
+                        ))}
                         </div>
                     </div>
                 </div>

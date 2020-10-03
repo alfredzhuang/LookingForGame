@@ -3,9 +3,11 @@ import NavbarUser from "../navbar/NavbarUser";
 import "./Browse.css"
 
 function Browse(prop) {
+    
     let {
         userData
     } = prop;
+
     return (
         <div className="browse">
             <div className="section">

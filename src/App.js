@@ -40,15 +40,18 @@ function App() {
   let db = firebase.firestore();
 
 
-  // let getGroupData = () => {
-  //   db.collection().doc().onSnapshotsInSync((querySnapshot) => {
-  //     const items = [];
-  //     querySnapshot.forEach((doc) => {
-  //       items.push(doc.data());
-  //     })
-  //     setUserData(items);
-  //   })
-  // }
+  let getGroupData = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+      db.collection("userData").doc(uid).collection("groups").onSnapshot((querySnapshot) => {
+        let items = [];
+        querySnapshot.forEach((doc) => {
+          items.push(doc.data());
+        })
+        setGroupData(items);
+      });
+    });
+  }
 
   let getUserData = () => {
     firebase.auth().onAuthStateChanged(user => {
@@ -186,6 +189,7 @@ function App() {
   useEffect(() => {
     authState();
     getUserData();
+    getGroupData();
   }, []);
 
 
@@ -221,6 +225,7 @@ function App() {
         ></Login>}/>
         <Route path='/homepage' exact render={() => 
         <Homepage
+        groupData = {groupData}
         userData = {userData}
         ></Homepage>}/>
         <Route path='/browse' exact render={() => 
