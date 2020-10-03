@@ -53,6 +53,7 @@ function Browse() {
                             <h3>League of Legends</h3>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
