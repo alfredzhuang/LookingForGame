@@ -9,6 +9,7 @@ import Create from "./components/pages/Create";
 import FindGroup from "./components/pages/FindGroup";
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
+import { v4 as uuidv4 } from 'uuid';
 
 
 function App() {
@@ -19,11 +20,36 @@ function App() {
   let [passwordError, setPasswordError] = useState("");
   let [userData, getUserDate] = useState("[]");
   let [username, setUserName] = useState("");
+  let [name, setName] = useState("");
+  let [game, setGame] = useState("");
+  let [discord, setDiscord] = useState("");
+  let [description, setDescription] = useState("");
   let uid;
   
   let db = firebase.firestore();
 
-  let getUserData = () => {};
+  let createGroup = () => {
+    let owner = user ? user.uid : 'unknown';
+    let ownerEmail = user ? user.email : 'unknown';
+    let group = {
+      owner,
+      ownerEmail,
+      name,
+      id: uuidv4(),
+      game,
+      discord,
+      description,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    }
+    db.collection(game).doc(group.id).set(group).catch((err) => {
+      console.log(err);
+    });
+    db.collection("userData").doc(group.owner).collection("groups").doc(group.id).set({name: group.name}).then(data => {
+      window.location = "homepage";
+    }).catch((err) => {
+      console.log(err);
+    });
+  };
 
   let clearEmailandPassword = () => {
     setEmail('');
@@ -130,7 +156,18 @@ function App() {
         ></Login>}/>
         <Route path='/homepage' exact component={Homepage}/>
         <Route path='/browse' exact component={Browse}/>
-        <Route path='/create' exact component={Create}/>
+        <Route path='/create' exact render={() => 
+        <Create
+        createGroup = {createGroup}
+        name = {name}
+        setName = {setName}
+        game = {game}
+        setGame = {setGame}
+        discord = {discord}
+        setDiscord = {setDiscord}
+        description = {description}
+        setDescription = {setDescription}
+        ></Create>}/>
         <Route path='/findgroup' exact component={FindGroup}/>
       </Switch>
     </Router>
