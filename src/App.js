@@ -12,9 +12,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
 import { storage } from './firebase';
 import { v4 as uuidv4 } from 'uuid';
-import { auth } from 'firebase';
-let file = {};
-let img = document.getElementById('img')
+
 
 
 
@@ -104,12 +102,16 @@ function App() {
       firebase.auth().onAuthStateChanged(user => {
         uid = user.uid;
 
-        storage.ref("users").child(user.uid + "/profile.jpg").put(image);
-
-        db.collection("userData").doc(uid).set({username, url}).then(data => {
-          window.location = "homepage";
-        }).catch((err) => {
-          console.log(err);
+        storage.ref("users").child(user.uid + "/profile.jpg").put(image).then(() => {
+          storage.ref("users").child(`${user.uid}/profile.jpg`).getDownloadURL().then(url => 
+            { 
+              setUrl(url);
+              db.collection("userData").doc(uid).set({username, url}).then(data => {
+                window.location = "homepage";
+              }).catch((err) => {
+                console.log(err);
+              });
+            });
         });
       });
       }

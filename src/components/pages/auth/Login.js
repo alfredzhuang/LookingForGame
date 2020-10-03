@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from "../../navbar/Navbar";
-import { Link, NavLink } from 'react-router-dom';
 import "./Login.css"
 
 let Login = (props) => {
