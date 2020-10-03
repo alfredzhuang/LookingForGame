@@ -43,12 +43,12 @@ let Login = (props) => {
                             <div className="login-input-container password">
                                     <label className="login-label" htmlFor="login-password">Password</label>
                                     <input 
-                                    placeholder="Enter your password" 
-                                    id= "login-password" className="input" 
-                                    type="password" 
-                                    required 
-                                    value={password} 
-                                    onChange={(e) => setPassword(e.target.value)}>
+                                        placeholder="Enter your password" 
+                                        id= "login-password" className="input" 
+                                        type="password" 
+                                        required 
+                                        value={password} 
+                                        onChange={(e) => setPassword(e.target.value)}>
                                     </input>
                                     <p className = "error">{passwordError}</p>
                                 </div>

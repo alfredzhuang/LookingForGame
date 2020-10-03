@@ -5,7 +5,7 @@ import "./Home.css";
 
 function Home() {
     return (
-        <div className="section home">
+        <div className="home">
             <header>
                 <Navbar />
             </header>
