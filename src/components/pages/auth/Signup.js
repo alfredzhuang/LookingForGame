@@ -5,6 +5,7 @@ import "./Signup.css"
 let Signup = (props) => {
 
     let {
+        changeFile,
         username,
         setUserName,
         email,
@@ -73,6 +74,9 @@ let Signup = (props) => {
                                     <p className = "error">{passwordError}</p>
                                 </div>
                             </div>
+                        <div>
+                            <input type = "file" onChange = {changeFile}/>
+                        </div>
                         <div>
                             <button onClick= {signUp} className="signup-button">
                                 Sign Up
