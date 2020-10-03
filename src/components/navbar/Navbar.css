@@ -31,6 +31,11 @@ a {
     text-decoration: none;
 }
 
+
+h1{
+    color: var(--accent-color);
+}
+
 .navbar-links {
     display: flex;
     align-items: center;
@@ -41,10 +46,11 @@ a {
     padding: 0px;
     margin: 0px;
     list-style: none;
+    align-items: center;
 }
 
 .navbar-links ul li {
-    margin: 0px 4px;
+    margin: 0px 8px;
 }
 
 .navbar-login-button, .navbar-signin-button {
@@ -55,4 +61,23 @@ a {
     padding: .75rem 1rem;
     line-height: 1;
     margin-left: 15px;
+    align-items: center;
+}
+
+.navbar-login-button:hover, .navbar-signin-button:hover{
+    background-color: var(--accent-color-tint);
+}
+
+.navbar-link-item {
+    color: white;
+    padding: 8px;
+}
+
+.navbar-link-item:hover {
+    color: var(--accent-color);
+    padding: 8px;
+}
+
+.navbar-logo img{
+    max-width: 80px;
 }

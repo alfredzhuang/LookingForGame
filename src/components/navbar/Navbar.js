@@ -7,7 +7,9 @@ function Navbar() {
         <div className="navbar">
             <nav className="navbar-container">
                 <div className="navbar-logo">
-                <Link to="/"><h1>LFG</h1></Link>
+                    <Link to="/">
+                        <img src="images/logo.png" alt="lfg logo"/>
+                    </Link>
                 </div>
                 <div className="navbar-links">
                     <ul>

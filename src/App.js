@@ -3,6 +3,10 @@ import './App.css';
 import Home from "./components/pages/Home";
 import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
+import Homepage from "./components/pages/Homepage";
+import Browse from "./components/pages/Browse";
+import Create from "./components/pages/Create";
+import FindGroup from "./components/pages/FindGroup";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import firebase from './firebase';
 
@@ -103,6 +107,10 @@ function App() {
           emailError = {emailError}
           passwordError = {passwordError}
         ></Login>}/>
+        <Route path='/homepage' exact component={Homepage}/>
+        <Route path='/browse' exact component={Browse}/>
+        <Route path='/create' exact component={Create}/>
+        <Route path='/findgroup' exact component={FindGroup}/>
       </Switch>
     </Router>
     </div>
