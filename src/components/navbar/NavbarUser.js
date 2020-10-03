@@ -47,7 +47,7 @@ function NavbarUser(prop) {
                             <p>{userData.username}</p>
                         </li>
                     <li className="navbar-link-item">
-                            <p>{userData.url}</p>
+                        <img src={userData.url} width="50" height="50"/>
                     </li>
                 </ul>
             </div>
