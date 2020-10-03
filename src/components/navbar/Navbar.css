@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    color: transparent;
     align-items: center;
     position: fixed;
     top: 0px;
@@ -10,7 +11,6 @@
     user-select: auto;
     z-index: 30;
     padding: 0px 50px;
-    backdrop-filter: blur(10px);
 }
 
 a {

@@ -10,8 +10,10 @@ function Home() {
                 <Navbar />
             </header>
             <div className="home-container">
-                <div className="home-image">
-                    <img src="images/LFGbackground.png"/>
+                <div className="flex-fill">
+                    <div className="home-image">
+                        <img src="images/LFGbackground.png" alt="hello" />
+                    </div>
                 </div>
             </div>
         </div>

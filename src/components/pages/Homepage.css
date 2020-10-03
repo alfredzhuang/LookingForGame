@@ -20,7 +20,7 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-.homepage-content .flexbox-container {
+.homepage-content .flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
