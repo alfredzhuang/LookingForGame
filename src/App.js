@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState  } from 'react';
 import './App.css';
+//import Profile from "./components/pages/profilepic/Profile";
 import Home from "./components/pages/Home";
 import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
@@ -9,7 +10,12 @@ import Create from "./components/pages/Create";
 import FindGroup from "./components/pages/FindGroup";
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
+import { storage } from './firebase';
 import { v4 as uuidv4 } from 'uuid';
+import { auth } from 'firebase';
+let file = {};
+let img = document.getElementById('img')
+
 
 
 function App() {
@@ -24,8 +30,16 @@ function App() {
   let [game, setGame] = useState("");
   let [discord, setDiscord] = useState("");
   let [description, setDescription] = useState("");
+  let [image, setImage] = useState(null);
+  let [url, setUrl] = useState("");
   let uid;
-  
+
+  let changeFile = e => {
+    if(e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
   let db = firebase.firestore();
 
   let createGroup = () => {
@@ -82,13 +96,17 @@ function App() {
     // console.log("logged in");
   };
 
+
   let signUp = () => {
     clearErrors();
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(data => {
       firebase.auth().onAuthStateChanged(user => {
         uid = user.uid;
-        db.collection("userData").doc(uid).set({username}).then(data => {
+
+        storage.ref("users").child(user.uid + "/profile.jpg").put(image);
+
+        db.collection("userData").doc(uid).set({username, url}).then(data => {
           window.location = "homepage";
         }).catch((err) => {
           console.log(err);
@@ -134,6 +152,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/signup' exact render={() =>
         <Signup 
+        changeFile = {changeFile}
         username = {username}
         setUserName = {setUserName}
         email = {email}

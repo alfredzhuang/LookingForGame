@@ -13,4 +13,6 @@ import "firebase/firestore";
 
 firebase.initializeApp(firebaseConfig);
 
-export default firebase;
+let storage = firebase.storage();
+
+export { storage, firebase as default };

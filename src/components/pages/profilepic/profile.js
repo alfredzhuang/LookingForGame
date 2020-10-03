@@ -1,9 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import "./style.css";
+import Navbar from "../navbar/Navbar";
+import firebase from 'firebase';
+import "firebase/firestore";
 
-function profilePic() {
-    const picture = React.useRef(null);
-    const uploader = React.useRef(null);
-    
-}
+let img = document.getElementById('img')
+let file = {};
+
+function chooseFile(e) {
+    let file = e.target.files[0];
+
+    firebase
+        .app()
+        .storage()
+        .ref('images')
+        .child(file.name)
+        .put(file);
+    }
+
+function getAnImage() {
+
+    firebase
+        .storage()
+        .ref('images')
+        .child(file.name)
+        .getDownloadURL()
+        .then(imgUrl => {
+        console.log(imgUrl);
+        });
+    }
+//export default Profile;
