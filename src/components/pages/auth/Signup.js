@@ -5,6 +5,8 @@ import "./Signup.css"
 let Signup = (props) => {
 
     let {
+        username,
+        setUserName,
         email,
         setEmail,
         password,
@@ -24,6 +26,12 @@ let Signup = (props) => {
                     </div>
                     <div className="signup-form">
                         <div>
+                            <div className="signup-input-container username">
+                                <label className="signup-label" htmlFor="signup-username">Username</label>
+                                <input placeholder="Enter your Username" id= "signup-username" className="input" type="text" required value = {username} onChange={(e) => setUserName(e.target.value)}></input>
+                            </div>
+                        </div> 
+                        <div>
                             <div className="signup-input-container email">
                                 <label className="signup-label" htmlFor="signup-email">Email</label>
                                 <input placeholder="Enter your email" id= "signup-email" className="input" type="text" required value = {email} onChange={(e) => setEmail(e.target.value)}></input>
@@ -38,7 +46,7 @@ let Signup = (props) => {
                                 </div>
                             </div>
                         <div>
-                            <button onClick={signUp} className="signup-button">
+                            <button onClick= {signUp} className="signup-button">
                                 Sign Up
                             </button>
                         </div>

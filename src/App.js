@@ -16,7 +16,14 @@ function App() {
   let [password, setPassword] = useState("");
   let [emailError, setEmailError] = useState("");
   let [passwordError, setPasswordError] = useState("");
+  let [userData, getUserDate] = useState("[]");
+  let [username, setUserName] = useState("");
+  let uid;
   
+  let db = firebase.firestore();
+
+  let getUserData = () => {};
+
   let clearEmailandPassword = () => {
     setEmail('');
     setPassword('');
@@ -30,6 +37,9 @@ function App() {
   let signIn = () => {
     clearErrors();
      firebase.auth().signInWithEmailAndPassword(email, password)
+     .then(data => {
+       window.location="homepage";
+     })
      .catch(err => {
        switch(err.code) {
          case "auth/user-not-found":
@@ -43,12 +53,22 @@ function App() {
        }
     });
     console.log("logged in");
-    window.location="homepage";
   };
 
   let signUp = () => {
     clearErrors();
     firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(data => {
+      firebase.auth().onAuthStateChanged(user => {
+        uid = user.uid;
+        db.collection("userData").doc(uid).set({username}).then(data => {
+          window.location = "homepage";
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+      }
+    )
     .catch(err => {
       switch(err.code) {
         case "auth/email-already-in-use":
@@ -67,6 +87,7 @@ function App() {
       if(user) {
         clearEmailandPassword();
         setUser(user);
+        uid = user.uid;
       }
       else {
         setUser('');
@@ -86,6 +107,8 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/signup' exact render={() =>
         <Signup 
+        username = {username}
+        setUserName = {setUserName}
         email = {email}
         setEmail = {setEmail}
         password = {password}
