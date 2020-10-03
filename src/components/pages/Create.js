@@ -3,20 +3,35 @@ import NavbarUser from "../navbar/NavbarUser";
 import "./Create.css"
 
 let create = (props) => {
-
     let {
         userData,
-    changeFile,
-      createGroup,
-      name,
-      setName,
-      game,
-      setGame,
-      discord,
-      setDiscord,
-      description,
-      setDescription
+        changeFile,
+        createGroup,
+        name,
+        setName,
+        game,
+        setGame,
+        discord,
+        setDiscord,
+        description,
+        setDescription
     } = props;
+
+    let isSelectedChange = false;
+
+    function handleChange(e) {
+        isSelectedChange = true;
+        setGame(e.target.value);
+    }
+
+    function handleGroup() {
+        if(!isSelectedChange) {
+            setGame("League of Legends");
+        }
+        if(game !== ""){
+            createGroup();
+        }
+    }
 
     return (
         <div className="create">
@@ -46,8 +61,8 @@ let create = (props) => {
                         <div>
                             <div className="create-input-container choose-game">
                                 <label htmlFor="game">Choose a Game:</label>
-                                    <select name="game" id="game" value={game} onChange={(e) => setGame(e.target.value)}>
-                                        <option value="LeagueofLegends">League of Legends</option>
+                                    <select name="game" id="game" value={game} onChange={handleChange}>
+                                        <option value="LeagueofLegends" selected="selected">League of Legends</option>
                                         <option value="AmongUs">Among Us</option>
                                         <option value="Minecraft">Minecraft</option>
                                         <option value="Genshin">Genshin Impact</option>
@@ -92,7 +107,7 @@ let create = (props) => {
                             <input type = "file" onChange = {changeFile}/>
                         </div>
                      <div>
-                         <button onClick = {createGroup} className="create-button">
+                         <button onClick={handleGroup} className="create-button">
                              Create Group
                          </button>
                      </div>
