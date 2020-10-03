@@ -41,9 +41,12 @@ function App() {
            setPasswordError(err.message);
            break;
        }
-    });
-    console.log("logged in");
-    window.location="homepage";
+      });
+      firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+          window.location.href = "/homepage";
+        }
+      });
   };
 
   let signUp = () => {
