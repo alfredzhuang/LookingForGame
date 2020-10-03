@@ -2,3 +2,7 @@
     background-color: var(--black);
     min-height: 100vh;
 }
+
+.browse .section {
+    padding-top: 60px;
+}

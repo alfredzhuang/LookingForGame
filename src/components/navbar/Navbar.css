@@ -1,4 +1,4 @@
-.navbar {
+.navbar, .navbar-user {
     display: flex;
     justify-content: space-between;
     color: transparent;
@@ -11,6 +11,12 @@
     user-select: auto;
     z-index: 30;
     padding: 0px 50px;
+}
+
+.navbar-user {
+    background-color: var(--container-color);
+    backdrop-filter: blur(10px);
+    height: 60px;
 }
 
 a {
@@ -80,4 +86,8 @@ h1{
 
 .navbar-logo img{
     max-width: 80px;
+}
+
+.navbar-user .navbar-logo img{
+    max-width: 54px;
 }

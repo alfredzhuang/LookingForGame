@@ -1,29 +1,37 @@
+.body{
+    height: 100%;
+}
+
 .create {
     background-color: var(--black);
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    background-color: var(--black);
     color: #fff;
-    min-height: 100vh;
     pointer-events: auto;
 }
 
+.create .section {
+    background-color: var(--black);
+}
+
 .content {
-    padding: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--black);
+    padding: 45px 150px;
     margin: 0 auto;
-    width: 700px
+    width: 100%;
 }
 
 .create-container {
-    background-color:rgba(255, 255, 255, 0.065);
-    display: flex;
     justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 42rem;
+    margin-top: 60px;
+    background-color:rgba(255, 255, 255, 0.065);
     padding: 3rem 3rem;
+    text-align: left;
+    min-width: 600px;
 }
 
 .create-header {
@@ -41,21 +49,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-}
-
-.input {
-    appearance: none;
-    background-color: #303030;
-    border: none;
-    color: #ffffff;
-    height: 3rem;
-    line-height: 1.5;
-    padding: 1rem;
-}
-
-.input:focus{
-    outline: 2px solid var(--accent-color);
-    background-color: #000;
 }
 
 .create-label {

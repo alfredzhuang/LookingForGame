@@ -10,7 +10,7 @@ function NavbarUser() {
       }
 
     return (
-    <div className="navbar">
+    <div className="navbar-user">
         <nav className="navbar-container">
             <div className="navbar-logo">
                 <Link to="/homepage">

@@ -32,19 +32,20 @@ function homepage() {
                             <div className="flex-fill">
                                 <img className="flex-img" src="/images/Phasmaphobia.jpg" alt="hello"/>
                             </div>
-                            <h3>Phasmaphobia</h3>
+                            <h3>Phasmophobia</h3>
                         </div>
                         <div className="flex-container">
                             <div className="flex-fill">
                                 <img className="flex-img" src="/images/Smash.jpg" alt="hello"/>
                             </div>
-                            <h3>Super Smash Bros: Ultimate</h3>
+                            <h3>Super Smash Bros: Ul...</h3>
                         </div>
                         <div className="flex-container">
                             <div className="flex-fill">
                                 <img className="flex-img" src="/images/Valorant.jpg" alt="hello"/>
                             </div>
                             <h3>Valorant</h3>
+                        </div>
                         <div className="flex-container">
                             <div className="flex-fill">
                                 <img className="flex-img" src="/images/spiritblossom.jpg" alt="hello"/>
@@ -55,7 +56,6 @@ function homepage() {
                 </div>
             </div>
         </div>
-    </div>
     )
 }
 
