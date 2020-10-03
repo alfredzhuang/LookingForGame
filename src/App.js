@@ -52,7 +52,7 @@ function App() {
            break;
        }
     });
-    console.log("logged in");
+    // console.log("logged in");
   };
 
   let signUp = () => {
