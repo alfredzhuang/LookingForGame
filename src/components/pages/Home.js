@@ -11,7 +11,7 @@ function Home() {
             </header>
             <div className="home-container">
                 <div className="home-image">
-                    <h2>product image goes here</h2>
+                    <img src="images/LFGbackground.png"/>
                 </div>
             </div>
         </div>
