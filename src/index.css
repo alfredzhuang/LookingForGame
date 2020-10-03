@@ -24,4 +24,8 @@ code {
   --accent-color: #F04DFE;
   --accent-color-tint: rgba(239, 77, 254, 0.3);
   --accent-color-light: #E0AAFF;
+  --fz-xs: 14px;
+  --fz-sm: 16px;
+  --fz-md: 24px;
+  --fz-lg: 32px;
 }

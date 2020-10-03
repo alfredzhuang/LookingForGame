@@ -2,3 +2,52 @@
     background-color: var(--black);
     min-height: 100vh;
 }
+
+.homepage-inner {
+    display: flex;
+    flex-direction: column;;
+    color: white;
+    font-size: var(--fz-lg);
+    padding: 0px 50px;
+    width: 100%;
+}
+
+
+.homepage-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.homepage-content .flexbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 18rem;
+    padding: 20px;
+    margin-right: 40px;
+}
+
+h3{
+    font-size: var(--fz-xs);
+    margin: 20px;
+    margin-left: 0px;
+}
+
+.flex-fill{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    max-height: 300px;
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.flex-container .flex-img {
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
