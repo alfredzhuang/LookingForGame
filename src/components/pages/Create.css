@@ -1,4 +1,90 @@
 .create {
     background-color: var(--black);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: var(--black);
+    color: #fff;
+    min-height: 100vh;
+    pointer-events: auto;
+}
+
+.content {
+    padding: 100px 150px;
+    margin: 0 auto;
+    width: 700px
+}
+
+.create-container {
+    background-color:rgba(255, 255, 255, 0.065);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 42rem;
+    padding: 3rem 3rem;
+}
+
+.create-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.create-form {
+    margin: 1rem 0;
+}
+
+.create-form .create-input-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input {
+    appearance: none;
+    background-color: #303030;
+    border: none;
+    color: #ffffff;
+    height: 3rem;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+.input:focus{
+    outline: 2px solid var(--accent-color);
+    background-color: #000;
+}
+
+.create-label {
+    margin-bottom: 0.3rem;
+}
+
+.create-button {
+    color: white;
+    background-color: var(--accent-color-tint);
+    border-radius: 4px;
+    border: none;
+    padding: 1rem 1rem;
+    line-height: 1;
+    width: 100%;
+    pointer-events: auto;
+    user-select: auto;
+    cursor: pointer;
+    outline: none;
+}
+
+.create-button:hover{
+    background-color: var(--accent-color);
+}
+
+.create-last {
+    margin-bottom: 2rem;
+}
+
+.choose-game select{
+    padding: 0.25rem 0.25rem;
+    outline: none;
 }
