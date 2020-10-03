@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css"
 import firebase from "../../firebase"
 
-function NavbarUser() {
+function NavbarUser(prop) {
+
+    let {
+        userData
+    } = prop;
 
     let logOut = () => {
         firebase.auth().signOut();
@@ -39,6 +43,12 @@ function NavbarUser() {
                             <p>Log Out</p>
                         </li>
                     </Link>
+                    <li className="navbar-link-item">
+                            <p>{userData.username}</p>
+                        </li>
+                    <li className="navbar-link-item">
+                        <img src={userData.url} alt="profile" width="50" height="50"/>
+                    </li>
                 </ul>
             </div>
         </nav>

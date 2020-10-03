@@ -13,16 +13,14 @@ import firebase from './firebase';
 import { storage } from './firebase';
 import { v4 as uuidv4 } from 'uuid';
 
-
-
-
 function App() {
   let [user, setUser] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [emailError, setEmailError] = useState("");
   let [passwordError, setPasswordError] = useState("");
-  let [userData, getUserDate] = useState("[]");
+  let [userData, setUserData] = useState([]);
+  let [groupData, setGroupData] = useState([]);
   let [username, setUserName] = useState("");
   let [name, setName] = useState("");
   let [game, setGame] = useState("");
@@ -31,6 +29,7 @@ function App() {
   let [image, setImage] = useState(null);
   let [url, setUrl] = useState("");
   let uid;
+
 
   let changeFile = e => {
     if(e.target.files[0]) {
@@ -41,11 +40,36 @@ function App() {
   let db = firebase.firestore();
 
 
+  let getGroupData = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+      db.collection("userData").doc(uid).collection("groups").onSnapshot((querySnapshot) => {
+        let items = [];
+        querySnapshot.forEach((doc) => {
+          items.push(doc.data());
+        })
+        setGroupData(items);
+      });
+    });
+  }
+
+  let getUserData = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+      db.collection("userData").doc(uid).get().then((doc) => {
+        let items = [];
+        items.push(doc.data());
+        setUserData(items[0]);
+      })
+    });
+  }
+
 
   let createGroup = () => {
     let owner = user ? user.uid : 'unknown';
     let ownerEmail = user ? user.email : 'unknown';
     let group = {
+      url,
       owner,
       ownerEmail,
       name,
@@ -55,13 +79,20 @@ function App() {
       description,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     }
-    db.collection(game).doc(group.id).set(group).catch((err) => {
-      console.log(err);
-    });
-    db.collection("userData").doc(group.owner).collection("groups").doc(group.id).set({name: group.name}).then(data => {
-      window.location = "homepage";
-    }).catch((err) => {
-      console.log(err);
+    storage.ref(game).child(group.id + "/image.jpg").put(image).then(() => {
+    storage.ref(game).child(`${group.id}/image.jpg`).getDownloadURL().then(url => 
+        { 
+          setUrl(url);
+          group.url = url;
+          db.collection(game).doc(group.id).set(group).catch((err) => {
+            console.log(err);
+          });
+          db.collection("userData").doc(group.owner).collection("groups").doc(group.id).set(group).then(data => {
+            window.location = "homepage";
+          }).catch((err) => {
+            console.log(err);
+          });
+        });
     });
   };
 
@@ -96,7 +127,6 @@ function App() {
     // console.log("logged in");
   };
 
-
   let signUp = () => {
     clearErrors();
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -105,7 +135,7 @@ function App() {
         uid = user.uid;
 
         storage.ref("users").child(user.uid + "/profile.jpg").put(image).then(() => {
-          storage.ref("users").child(`${user.uid}/profile.jpg`).getDownloadURL().then(url => 
+        storage.ref("users").child(`${user.uid}/profile.jpg`).getDownloadURL().then(url => 
             { 
               setUrl(url);
               db.collection("userData").doc(uid).set({username, url}).then(data => {
@@ -158,6 +188,8 @@ function App() {
 
   useEffect(() => {
     authState();
+    getUserData();
+    getGroupData();
   }, []);
 
 
@@ -191,10 +223,19 @@ function App() {
         emailError = {emailError}
         passwordError = {passwordError}
         ></Login>}/>
-        <Route path='/homepage' exact component={Homepage}/>
-        <Route path='/browse' exact component={Browse}/>
+        <Route path='/homepage' exact render={() => 
+        <Homepage
+        groupData = {groupData}
+        userData = {userData}
+        ></Homepage>}/>
+        <Route path='/browse' exact render={() => 
+        <Browse
+        userData = {userData}
+        ></Browse>}/>
         <Route path='/create' exact render={() => 
         <Create
+        userData = {userData}
+        changeFile = {changeFile}
         createGroup = {createGroup}
         name = {name}
         setName = {setName}
@@ -205,7 +246,10 @@ function App() {
         description = {description}
         setDescription = {setDescription}
         ></Create>}/>
-        <Route path='/findgroup' exact component={FindGroup}/>
+        <Route path='/findgroup' exact render={() => 
+        <FindGroup
+        userData = {userData}
+        ></FindGroup>}/>
       </Switch>
     </Router>
     </div>

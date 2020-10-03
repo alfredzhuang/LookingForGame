@@ -5,6 +5,8 @@ import "./Create.css"
 let create = (props) => {
 
     let {
+        userData,
+    changeFile,
       createGroup,
       name,
       setName,
@@ -19,7 +21,7 @@ let create = (props) => {
     return (
         <div className="create">
          	<div className="section">
-             <NavbarUser />
+             <NavbarUser userData = {userData}/>
              <div className="content">
                 <div className="create-container">
                     <div className="create-header">
@@ -55,44 +57,47 @@ let create = (props) => {
                                     </select>
                             </div>
                         </div>
+                     </div>
+                     <div>
+                         <div className="create-input-container discord-link">
+                             <label 
+								className="create-label"
+						        htmlFor="create-discord-link">Messaging Invite Link</label>
+                             <input 
+								placeholder="Enter your invite link (i.e. Discord)"
+								id= "create-discord-link" 
+								className="input" 
+								type="text" 
+								required 
+                                value={discord} 
+                                onChange={(e) => setDiscord(e.target.value)}></input>
+                         </div>
+                     </div>
+                         <div className="create-last">
+                             <div className="create-input-container Description">
+                                 <label 
+								    className="create-label" 
+									htmlFor="create-Description">Description</label>
+                                 <input 
+									placeholder="Enter your Group Description" 
+									id= "create-Description" 
+									className="input" 
+									type="text" 
+								    required 
+                                    value={description} 
+                                    onChange={(e) => setDescription(e.target.value)}></input>
+                             </div>
+                         </div>
                         <div>
-                            <div className="create-input-container discord-link">
-                                <label 
-                                    className="create-label"
-                                    htmlFor="create-discord-link">Messaging Invite Link</label>
-                                <input 
-                                    placeholder="Enter your invite link (i.e. Discord)"
-                                    id= "create-discord-link" 
-                                    className="input" 
-                                    type="text" 
-                                    required 
-                                    value={discord} 
-                                    onChange={(e) => setDiscord(e.target.value)}></input>
-                            </div>
+                            <input type = "file" onChange = {changeFile}/>
                         </div>
-                            <div className="create-last">
-                                <div className="create-input-container Description">
-                                    <label 
-                                        className="create-label" 
-                                        htmlFor="create-Description">Description</label>
-                                    <input 
-                                        placeholder="Enter your Group Description" 
-                                        id= "create-Description" 
-                                        className="input" 
-                                        type="text" 
-                                        required 
-                                        value={description} 
-                                        onChange={(e) => setDescription(e.target.value)}></input>
-                                </div>
-                            </div>
-                        <div>
-                            <button onClick = {createGroup} className="create-button">
-                                Create Group
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                     <div>
+                         <button onClick = {createGroup} className="create-button">
+                             Create Group
+                         </button>
+                     </div>
+                 </div>
+             </div>
          </div>
      </div>
     )
