@@ -36,6 +36,8 @@ function App() {
   let [description, setDescription] = useState("");
   let [image, setImage] = useState(null);
   let [url, setUrl] = useState("");
+  let [gameGroup, setGameGroup] = ([]);
+  let [gameType, setGameType] = ([]);
   let uid;
 
 
@@ -47,6 +49,15 @@ function App() {
 
   let db = firebase.firestore();
 
+   let getGameGroup = () => {
+       db.collection(gameType).onSnapshot((querySnapshot) => {
+         let items = [];
+         querySnapshot.forEach((doc) => {
+           items.push(doc.data());
+         })
+         setGroupData(items);
+       });
+   }
 
   let getGroupData = () => {
     firebase.auth().onAuthStateChanged(user => {
@@ -254,30 +265,33 @@ function App() {
         description = {description}
         setDescription = {setDescription}
         ></Create>}/>
-        <Route path='/findgroup' exact render={() => 
-        <FindGroup
-        userData = {userData}
-        ></FindGroup>}/>
         <Route path='/AmongUs' exact render={() => 
         <Among
+        getGameGroup = {getGameGroup}
         ></Among>}/>
         <Route path='/GenshinImpact' exact render={() => 
         <Genshin
+        getGameGroup = {getGameGroup}
         ></Genshin>}/>
          <Route path='/LeagueOfLegends' exact render={() => 
         <League
+        getGameGroup = {getGameGroup}
         ></League>}/>
         <Route path='/Minecraft' exact render={() => 
         <Minecraft
+        getGameGroup = {getGameGroup}
         ></Minecraft>}/>
          <Route path='/Smash' exact render={() => 
         <Smash
+        getGameGroup = {getGameGroup}
         ></Smash>}/>
         <Route path='/Phasmophobia' exact render={() => 
         <Phasmophobia
+        getGameGroup = {getGameGroup}
         ></Phasmophobia>}/>
         <Route path='/Valorant' exact render={() => 
         <Valorant
+        getGameGroup = {getGameGroup}
         ></Valorant>}/>
       </Switch>
     </Router>

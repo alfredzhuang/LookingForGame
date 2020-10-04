@@ -28,11 +28,6 @@ function NavbarUser(prop) {
                             <p>Browse</p>
                         </li>
                     </Link>
-                    <Link to="/findgroup">
-                        <li className="navbar-link-item">
-                            <p>Find Group</p>
-                        </li>
-                    </Link>
                     <Link to="/create">
                         <li className="navbar-link-item">
                             <p>Create Group</p>
