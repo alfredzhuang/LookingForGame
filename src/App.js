@@ -135,136 +135,101 @@ let getGameGroupAmongUs = () => {
   }
 
   let joinGroupGenshin = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : '';
     db.collection("Genshin").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let joinGroupLeague = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : '';
     db.collection("LeagueofLegends").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let joinGroupAmongUs = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : '';
     db.collection("AmongUs").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let joinGroupMinecraft = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : '';
     db.collection("Minecraft").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let joinGroupPhasmophobia = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : '';
     db.collection("Phasmophobia").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let joinGroupSmash = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : '';
     db.collection("Smash").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let joinGroupValorant = (groupid) => {
-    firebase.auth().onAuthStateChanged(user => {
-      uid = user.uid;
+    let uid = user ? user.uid : 'unknown';
     db.collection("Valorant").where('id', '==', groupid).onSnapshot((querySnapshot) => {
       let items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(uid);
-        console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
       });
     }); 
-  });
   }
 
   let createGroup = () => {
@@ -452,36 +417,43 @@ let getGameGroupAmongUs = () => {
         ></Create>}/>
         <Route path='/AmongUs' exact render={() => 
         <Among
+        joinGroupAmongUs = {joinGroupAmongUs}
         gameGroup = {gameGroup}
         userData = {userData}
         ></Among>}/>
         <Route path='/GenshinImpact' exact render={() => 
         <Genshin
+        joinGroupGenshin = {joinGroupGenshin}
         gameGroup = {gameGroup}
         userData = {userData}
         ></Genshin>}/>
          <Route path='/LeagueOfLegends' exact render={() => 
         <League
+        joinGroupLeague = {joinGroupLeague}
         gameGroup = {gameGroup}
         userData = {userData}
         ></League>}/>
         <Route path='/Minecraft' exact render={() => 
         <Minecraft
+        joinGroupMinecraft = {joinGroupMinecraft}
         gameGroup = {gameGroup}
         userData = {userData}
         ></Minecraft>}/>
          <Route path='/Smash' exact render={() => 
         <Smash
+        joinGroupSmash = {joinGroupSmash}
         gameGroup = {gameGroup}
         userData = {userData}
         ></Smash>}/>
         <Route path='/Phasmophobia' exact render={() => 
         <Phasmophobia
+        joinGroupPhasmophobia = {joinGroupPhasmophobia}
         gameGroup = {gameGroup}
         userData = {userData}
         ></Phasmophobia>}/>
         <Route path='/Valorant' exact render={() => 
         <Valorant
+        joinGroupValorant = {joinGroupValorant}
         gameGroup = {gameGroup}
         userData = {userData}
         ></Valorant>}/>

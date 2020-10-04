@@ -30,7 +30,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/AmongUs">
-                                <h3>Among Us</h3>
+                                <h3 onClick = {getGameGroupAmongUs}>Among Us</h3>
                             </Link>
                         </div>
                         <div className="flex-container">
@@ -40,7 +40,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/GenshinImpact">
-                                <h3>Genshin Impact</h3>
+                                <h3 onClick = {getGameGroupGenshin}>Genshin Impact</h3>
                             </Link>
                         </div>
                         <div className="flex-container">
@@ -50,7 +50,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/Minecraft">
-                                <h3>Minecraft</h3>
+                                <h3 onClick = {getGameGroupMinecraft}>Minecraft</h3>
                             </Link>
                         </div>
                         <div className="flex-container">
@@ -60,7 +60,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/Phasmophobia">
-                                <h3>Phasmophobia</h3>
+                                <h3 onClick = {getGameGroupPhasmophobia}>Phasmophobia</h3>
                             </Link>
                         </div>
                         <div className="flex-container">
@@ -70,7 +70,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/Smash">
-                                <h3>Super Smash Bros: Ulti...</h3>
+                                <h3 onClick = {getGameGroupSmash}>Super Smash Bros: Ulti...</h3>
                             </Link>
                         </div>
                         <div className="flex-container">
@@ -80,7 +80,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/Valorant">
-                                <h3>Valorant</h3>
+                                <h3 onClick = {getGameGroupValorant}>Valorant</h3>
                             </Link>
                         </div>
                         <div className="flex-container">
@@ -90,7 +90,7 @@ function Browse(prop) {
                                 </div>
                             </Link>
                             <Link to="/LeagueofLegends">
-                                <h3>League of Legends</h3>
+                                <h3 onClick = {getGameGroupLeague}>League of Legends</h3>
                             </Link>
                         </div>
                     </div>

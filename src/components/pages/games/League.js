@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function League(prop) {
     let {
+        joinGroupLeague,
         gameGroup,
         userData        
     } = prop;
@@ -26,8 +27,8 @@ function League(prop) {
                                         </div>
                                         <p className="group-card-description-p">{x.description}</p>
                                         <div className="group-card-description-join">
-                                            <p>Join Group</p>
-                                        </div>
+                                            <p onClick = {joinGroupLeague(x.id)}>Join Group</p>
+                                        </div> 
                                     </div>
                                 </div>
                             ))}
@@ -40,12 +41,4 @@ function League(prop) {
 }
 
 export default League
-{/* <div className = "LeagueOfLegends">
-{gameGroup.map((x) => (
-<div key = {x.discord}>
-    <h2>{x.name}</h2>
-    <p>{x.description}</p>
-    <img src={x.url} alt="group" width="100" height="100"/>
-</div>
-))}
-</div> */}
+
