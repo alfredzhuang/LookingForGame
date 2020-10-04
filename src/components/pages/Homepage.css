@@ -90,3 +90,23 @@
     width: 200px;
     height: 250px;
 }
+
+.inviteLink {
+    color: var(--accent-color);
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 0.6rem 0.6rem;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.inviteLink:hover{
+    background-color: var(--accent-color-tint);
+}
+
+.inviteLink h3{
+    margin: 0;
+}

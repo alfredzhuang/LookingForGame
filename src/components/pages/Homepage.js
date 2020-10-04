@@ -2,6 +2,7 @@ import React from 'react'
 import NavbarUser from "../navbar/NavbarUser";
 import "./Homepage.css";
 import { Link } from 'react-router-dom';
+import Group from './Group';
 
 function homepage(prop) {
 
@@ -20,17 +21,18 @@ function homepage(prop) {
                         <div className="homepage-flex-container">
                             {groupData.map((x) => (
                                 <div key={x.discord} className="group-card">
-                                    <Link to="/group">
-                                        <div className="flex-fill">
-                                            <img 
-                                                className="homepage-img"
-                                                src={x.url} 
-                                                alt="group"/>
-                                        </div>
-                                    </Link>
-                                    <Link to="/group">
-                                        <h3>{x.name}</h3>
-                                    </Link>
+                                    <div className="flex-fill">
+                                        <img 
+                                            className="homepage-img"
+                                            src={x.url} 
+                                            alt="group"/>
+                                    </div>
+                                    <h3>{x.name}</h3>
+                                    <div className="inviteLink" >
+                                        <a target="_blank" rel="noopener noreferrer" href={x.discord}>
+                                            <h3>Get Invite Link</h3>
+                                        </a>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -42,33 +44,4 @@ function homepage(prop) {
     )
 }
 
-export default homepage
-
-
-{/* <div className="homepage">
-            <div className="section">
-                <NavbarUser userData = {userData}/>
-                <div className="homepage-inner">
-                    <h2>Your Groups</h2>
-                    <div className="homepage-content">
-                        <div className="homepage-container">
-                            {groupData.map((x) => (
-                                <div key={x.discord} className="group-card">
-                                    <Link to="/group">
-                                        <div className="flex-fill">
-                                            <img 
-                                                className="homepage-img"
-                                                src={x.url} 
-                                                alt="group"/>
-                                        </div>
-                                    </Link>
-                                    <Link to="/group">
-                                        <h3>{x.name}</h3>
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  */}
+export default homepage;
