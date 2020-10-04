@@ -141,6 +141,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -155,6 +156,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -169,6 +171,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -183,6 +186,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -197,6 +201,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -211,6 +216,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -225,6 +231,7 @@ let getGameGroupAmongUs = () => {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
