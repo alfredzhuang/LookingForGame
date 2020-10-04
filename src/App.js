@@ -14,7 +14,7 @@ import Smash from "./components/pages/games/Smash";
 import Valorant from "./components/pages/games/Valorant";
 import Minecraft from "./components/pages/games/Minecraft";
 import Phasmophobia from "./components/pages/games/Phasmophobia";
-
+import Group from "./components/pages/Group"
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
 import { storage } from './firebase';
@@ -292,6 +292,8 @@ function App() {
         <Valorant
         getGameGroup = {getGameGroup}
         ></Valorant>}/>
+         <Route path='/group' exact render={() => 
+        <Group></Group>}/>
       </Switch>
     </Router>
     </div>
