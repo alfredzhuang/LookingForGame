@@ -7,7 +7,6 @@ import Login from "./components/pages/auth/Login";
 import Homepage from "./components/pages/Homepage";
 import Browse from "./components/pages/Browse";
 import Create from "./components/pages/Create";
-import FindGroup from "./components/pages/FindGroup";
 import League from "./components/pages/games/League";
 import Among from "./components/pages/games/Among";
 import Genshin from "./components/pages/games/Genshin";
