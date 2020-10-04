@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Phasmophobia.css"
 
 function Phasmophobia(prop) {
     let {

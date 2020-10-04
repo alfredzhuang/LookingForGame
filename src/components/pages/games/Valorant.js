@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Valorant.css"
 
 function Valorant(prop) {
     let {

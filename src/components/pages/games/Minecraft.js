@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Minecraft.css"
 
 function Minecraft(prop) {
     let {

@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Genshin.css"
 
 function Genshin(prop) {
 

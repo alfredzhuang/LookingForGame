@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./Among.css"
 function Among(prop) {
     let {
         gameGroup

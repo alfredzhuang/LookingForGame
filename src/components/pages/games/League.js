@@ -1,4 +1,5 @@
 import React from 'react'
+import "./League.css"
 
 function League(prop) {
     let {

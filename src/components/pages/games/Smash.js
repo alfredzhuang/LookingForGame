@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Smash.css"
 
 function Smash(prop) {
     let {
