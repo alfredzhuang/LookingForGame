@@ -22,6 +22,10 @@ function NavbarUser(prop) {
                 </Link>
             </div>
             <div className="navbar-links">
+                <div className="avatar">
+                        <img src={userData.url} alt="profile" width="50" height="50"/>
+                         <p>{userData.username}</p>
+                    </div>
                 <ul>
                     <Link to="/browse">
                         <li className="navbar-link-item">
@@ -38,12 +42,6 @@ function NavbarUser(prop) {
                             <p>Log Out</p>
                         </li>
                     </Link>
-                    <li className="navbar-link-item">
-                            <p>{userData.username}</p>
-                        </li>
-                    <li className="navbar-link-item">
-                        <img src={userData.url} alt="profile" width="50" height="50"/>
-                    </li>
                 </ul>
             </div>
         </nav>
