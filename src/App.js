@@ -144,7 +144,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -163,7 +163,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -182,7 +182,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -201,7 +201,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -220,7 +220,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -239,7 +239,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
@@ -258,7 +258,7 @@ let getGameGroupAmongUs = () => {
         console.log(uid);
         console.log(items[0].id);
         db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
-         window.location = "homepage";
+          alert(items[0].discord);
         }).catch((err) => {
           console.log(err);
         });
