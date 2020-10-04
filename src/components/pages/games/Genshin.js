@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 function Genshin(prop) {
 
     let {
+        joinGroupGenshin,
         gameGroup,
         userData
     } = prop;
@@ -28,7 +29,7 @@ function Genshin(prop) {
                                         </div>
                                         <p className="group-card-description-p">{x.description}</p>
                                         <div className="group-card-description-join">
-                                            <p>Join Group</p>
+                                            <p onClick = {() => {joinGroupGenshin(x.id);}}>Join Group</p>
                                         </div>
                                     </div>
                                 </div>

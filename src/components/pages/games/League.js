@@ -9,6 +9,7 @@ function League(prop) {
         gameGroup,
         userData        
     } = prop;
+
     return (
         <div className="LeagueOfLegends">
             <div className="section">
@@ -27,7 +28,7 @@ function League(prop) {
                                         </div>
                                         <p className="group-card-description-p">{x.description}</p>
                                         <div className="group-card-description-join">
-                                            <p onClick = {joinGroupLeague(x.id)}>Join Group</p>
+                                            <p onClick = {() => {joinGroupLeague(x.id);}}>Join Group</p>
                                         </div> 
                                     </div>
                                 </div>

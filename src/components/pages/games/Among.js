@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Among(prop) {
     let {
+        joinGroupAmongUs,
         gameGroup,
         userData
     } = prop;
@@ -27,7 +28,7 @@ function Among(prop) {
                                         </div>
                                         <p className="group-card-description-p">{x.description}</p>
                                         <div className="group-card-description-join">
-                                            <p>Join Group</p>
+                                            <p onClick = {() => {joinGroupAmongUs(x.id);}}>Join Group</p>
                                         </div>
                                     </div>
                                 </div>
