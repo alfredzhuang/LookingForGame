@@ -8,6 +8,14 @@ import Homepage from "./components/pages/Homepage";
 import Browse from "./components/pages/Browse";
 import Create from "./components/pages/Create";
 import FindGroup from "./components/pages/FindGroup";
+import League from "./components/pages/games/League";
+import Among from "./components/pages/games/Among";
+import Genshin from "./components/pages/games/Genshin";
+import Smash from "./components/pages/games/Smash";
+import Valorant from "./components/pages/games/Valorant";
+import Minecraft from "./components/pages/games/Minecraft";
+import Phasmophobia from "./components/pages/games/Phasmophobia";
+
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import firebase from './firebase';
 import { storage } from './firebase';
@@ -250,6 +258,27 @@ function App() {
         <FindGroup
         userData = {userData}
         ></FindGroup>}/>
+        <Route path='/AmongUs' exact render={() => 
+        <Among
+        ></Among>}/>
+        <Route path='/GenshinImpact' exact render={() => 
+        <Genshin
+        ></Genshin>}/>
+         <Route path='/LeagueOfLegends' exact render={() => 
+        <League
+        ></League>}/>
+        <Route path='/Minecraft' exact render={() => 
+        <Minecraft
+        ></Minecraft>}/>
+         <Route path='/Smash' exact render={() => 
+        <Smash
+        ></Smash>}/>
+        <Route path='/Phasmophobia' exact render={() => 
+        <Phasmophobia
+        ></Phasmophobia>}/>
+        <Route path='/Valorant' exact render={() => 
+        <Valorant
+        ></Valorant>}/>
       </Switch>
     </Router>
     </div>
