@@ -1,5 +1,6 @@
 # LookingForGame
 https://lookingforgroup-40a98.web.app/
+
 Website that helps you search for groups that are currently playing your favorite games!
 How it works:
 
