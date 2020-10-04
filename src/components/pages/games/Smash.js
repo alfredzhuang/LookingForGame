@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Smash(prop) {
     let {
+        joinGroupSmash,
         gameGroup,
         userData        
     } = prop;
@@ -26,7 +27,7 @@ function Smash(prop) {
                                         </div>
                                         <p className="group-card-description-p">{x.description}</p>
                                         <div className="group-card-description-join">
-                                            <p>Join Group</p>
+                                            <p onClick = {() => {joinGroupSmash(x.id);}}>Join Group</p>
                                         </div>
                                     </div>
                                 </div>

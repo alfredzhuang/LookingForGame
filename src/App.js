@@ -261,6 +261,11 @@ let getGameGroupAmongUs = () => {
           db.collection(game).doc(group.id).set(group).catch((err) => {
             console.log(err);
           });
+          db.collection("userData").doc(group.owner).collection("groups").doc(group.id).set(group).then(data => {
+            window.location = "homepage";
+          }).catch((err) => {
+            console.log(err);
+          });
         });
     });
   };

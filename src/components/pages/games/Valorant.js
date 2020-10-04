@@ -4,6 +4,7 @@ import NavbarUser from "../../navbar/NavbarUser"
 import { Link } from 'react-router-dom';
 function Valorant(prop) {
     let {
+        joinGroupValorant,
         gameGroup,
         userData        
     } = prop;
@@ -25,7 +26,7 @@ function Valorant(prop) {
                                         </div>
                                         <p className="group-card-description-p">{x.description}</p>
                                         <div className="group-card-description-join">
-                                            <p>Join Group</p>
+                                            <p onClick = {() => {joinGroupValorant(x.id);}}>Join Group</p>
                                         </div>
                                     </div>
                                 </div>
