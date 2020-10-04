@@ -29,14 +29,13 @@ function App() {
   let [userData, setUserData] = useState([]);
   let [groupData, setGroupData] = useState([]);
   let [username, setUserName] = useState("");
+  let [gameGroup, setGameGroup] = useState([]);
   let [name, setName] = useState("");
   let [game, setGame] = useState("");
   let [discord, setDiscord] = useState("");
   let [description, setDescription] = useState("");
   let [image, setImage] = useState(null);
   let [url, setUrl] = useState("");
-  let [gameGroup, setGameGroup] = ([]);
-  let [gameType, setGameType] = ([]);
   let uid;
 
 
@@ -48,15 +47,69 @@ function App() {
 
   let db = firebase.firestore();
 
-   let getGameGroup = () => {
-       db.collection(gameType).onSnapshot((querySnapshot) => {
+   let getGameGroupGenshin = () => {
+       db.collection("Genshin").onSnapshot((querySnapshot) => {
          let items = [];
          querySnapshot.forEach((doc) => {
            items.push(doc.data());
          })
-         setGroupData(items);
+         setGameGroup(items);
        });
    }
+   let getGameGroupLeague = () => {
+    db.collection("LeagueofLegends").onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      })
+      setGameGroup(items);
+    });
+}
+let getGameGroupMinecraft = () => {
+  db.collection("Minecraft").onSnapshot((querySnapshot) => {
+    let items = [];
+    querySnapshot.forEach((doc) => {
+      items.push(doc.data());
+    })
+    setGameGroup(items);
+  });
+}
+let getGameGroupValorant = () => {
+  db.collection("Valorant").onSnapshot((querySnapshot) => {
+    let items = [];
+    querySnapshot.forEach((doc) => {
+      items.push(doc.data());
+    })
+    setGameGroup(items);
+  });
+}
+let getGameGroupSmash = () => {
+  db.collection("Smash").onSnapshot((querySnapshot) => {
+    let items = [];
+    querySnapshot.forEach((doc) => {
+      items.push(doc.data());
+    })
+    setGameGroup(items);
+  });
+}
+let getGameGroupPhasmophobia = () => {
+  db.collection("Phasmophobia").onSnapshot((querySnapshot) => {
+    let items = [];
+    querySnapshot.forEach((doc) => {
+      items.push(doc.data());
+    })
+    setGameGroup(items);
+  });
+}
+let getGameGroupAmongUs = () => {
+  db.collection("AmongUs").onSnapshot((querySnapshot) => {
+    let items = [];
+    querySnapshot.forEach((doc) => {
+      items.push(doc.data());
+    })
+    setGameGroup(items);
+  });
+}
 
   let getGroupData = () => {
     firebase.auth().onAuthStateChanged(user => {
@@ -248,6 +301,13 @@ function App() {
         ></Homepage>}/>
         <Route path='/browse' exact render={() => 
         <Browse
+        getGameGroupGenshin = {getGameGroupGenshin}
+        getGameGroupValorant = {getGameGroupValorant}
+        getGameGroupLeague = {getGameGroupLeague}
+        getGameGroupSmash = {getGameGroupSmash}
+        getGameGroupPhasmophobia = {getGameGroupPhasmophobia}
+        getGameGroupMinecraft = {getGameGroupMinecraft}
+        getGameGroupAmongUs = {getGameGroupAmongUs}
         userData = {userData}
         ></Browse>}/>
         <Route path='/create' exact render={() => 
@@ -266,31 +326,31 @@ function App() {
         ></Create>}/>
         <Route path='/AmongUs' exact render={() => 
         <Among
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></Among>}/>
         <Route path='/GenshinImpact' exact render={() => 
         <Genshin
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></Genshin>}/>
          <Route path='/LeagueOfLegends' exact render={() => 
         <League
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></League>}/>
         <Route path='/Minecraft' exact render={() => 
         <Minecraft
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></Minecraft>}/>
          <Route path='/Smash' exact render={() => 
         <Smash
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></Smash>}/>
         <Route path='/Phasmophobia' exact render={() => 
         <Phasmophobia
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></Phasmophobia>}/>
         <Route path='/Valorant' exact render={() => 
         <Valorant
-        getGameGroup = {getGameGroup}
+        gameGroup = {gameGroup}
         ></Valorant>}/>
       </Switch>
     </Router>

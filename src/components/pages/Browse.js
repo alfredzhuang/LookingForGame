@@ -6,6 +6,13 @@ import { Link } from 'react-router-dom';
 function Browse(prop) {
     
     let {
+        getGameGroupMinecraft,
+        getGameGroupSmash,
+        getGameGroupLeague,
+        getGameGroupPhasmophobia,
+        getGameGroupValorant,
+        getGameGroupAmongUs,
+        getGameGroupGenshin,
         userData
     } = prop;
 
@@ -19,7 +26,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/AmongUs">
                                 <div className="flex-fill">
-                                    <img className="flex-img" src="/images/Among Us.jpg" alt="hello"/>
+                                    <img className="flex-img" src="/images/Among Us.jpg" alt="hello" onClick = {getGameGroupAmongUs}/>
                                 </div>
                             </Link>
                             <Link to="/AmongUs">
@@ -29,7 +36,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/GenshinImpact">
                                 <div className="flex-fill">
-                                    <img className="flex-img" src="/images/Genshin Impact.jpg" alt="hello"/>
+                                    <img className="flex-img" src="/images/Genshin Impact.jpg" alt="hello" onClick = {getGameGroupGenshin}/>
                                 </div>
                             </Link>
                             <Link to="/GenshinImpact">
@@ -39,7 +46,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/Minecraft">
                                 <div className="flex-fill">
-                                    <img className="flex-img" src="/images/Minecraft.jpg" alt="hello"/>
+                                    <img className="flex-img" src="/images/Minecraft.jpg" alt="hello" onClick = {getGameGroupMinecraft}/>
                                 </div>
                             </Link>
                             <Link to="/Minecraft">
@@ -49,7 +56,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/Phasmophobia">
                                 <div className="flex-fill">
-                                    <img className="flex-img" src="/images/Phasmophobia.jpg" alt="hello"/>
+                                    <img className="flex-img" src="/images/Phasmophobia.jpg" alt="hello" onClick = {getGameGroupPhasmophobia}/>
                                 </div>
                             </Link>
                             <Link to="/Phasmophobia">
@@ -59,7 +66,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/Smash">
                                 <div className="flex-fill">
-                                    <img className="flex-img" src="/images/Smash.jpg" alt="hello"/>
+                                    <img className="flex-img" src="/images/Smash.jpg" alt="hello" onClick = {getGameGroupSmash}/>
                                 </div>
                             </Link>
                             <Link to="/Smash">
@@ -69,7 +76,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/Valorant">
                                 <div className="flex-fill">
-                                    <img className="flex-img" src="/images/Valorant.jpg" alt="hello"/>
+                                    <img className="flex-img" src="/images/Valorant.jpg" alt="hello" onClick = {getGameGroupValorant}/>
                                 </div>
                             </Link>
                             <Link to="/Valorant">
@@ -79,7 +86,7 @@ function Browse(prop) {
                         <div className="flex-container">
                             <Link to="/LeagueofLegends">
                                 <div className="flex-fill">
-                                    <img className="flex-img flex-league" src="/images/spiritblossom.jpg" alt="hello"/>
+                                    <img className="flex-img flex-league" src="/images/spiritblossom.jpg" alt="hello" onClick = {getGameGroupLeague}/>
                                 </div>
                             </Link>
                             <Link to="/LeagueofLegends">
