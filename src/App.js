@@ -327,30 +327,37 @@ let getGameGroupAmongUs = () => {
         <Route path='/AmongUs' exact render={() => 
         <Among
         gameGroup = {gameGroup}
+        userData = {userData}
         ></Among>}/>
         <Route path='/GenshinImpact' exact render={() => 
         <Genshin
         gameGroup = {gameGroup}
+        userData = {userData}
         ></Genshin>}/>
          <Route path='/LeagueOfLegends' exact render={() => 
         <League
         gameGroup = {gameGroup}
+        userData = {userData}
         ></League>}/>
         <Route path='/Minecraft' exact render={() => 
         <Minecraft
         gameGroup = {gameGroup}
+        userData = {userData}
         ></Minecraft>}/>
          <Route path='/Smash' exact render={() => 
         <Smash
         gameGroup = {gameGroup}
+        userData = {userData}
         ></Smash>}/>
         <Route path='/Phasmophobia' exact render={() => 
         <Phasmophobia
         gameGroup = {gameGroup}
+        userData = {userData}
         ></Phasmophobia>}/>
         <Route path='/Valorant' exact render={() => 
         <Valorant
         gameGroup = {gameGroup}
+        userData = {userData}
         ></Valorant>}/>
          <Route path='/group' exact render={() => 
         <Group></Group>}/>

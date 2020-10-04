@@ -2,3 +2,139 @@
     background-color: var(--black);
     min-height: 100vh;
 }
+
+.Valorant .section {
+    padding: 60px 0px;
+}
+
+.Valorant-inner {
+    display: flex;
+    flex-direction: column;;
+    color: white;
+    font-size: var(--fz-lg);
+    padding: 0px 50px;
+    width: 100%;
+}
+
+.Valorant-inner h2 {
+    margin: 40px 0px;
+}
+
+.Valorant {
+    background-color: var(--black);
+    min-height: 100vh;
+}
+
+.Valorant .section {
+    padding-top: 60px;
+}
+
+.Valorant {
+    background-color: var(--black);
+    min-height: 100vh;
+}
+
+.Valorant .section {
+    padding: 60px 0px;
+}
+
+.Valorant-inner {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: var(--fz-lg);
+    padding: 0px 50px;
+    width: 100%;
+}
+
+
+.Valorant-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.Valorant-content .Valorant-flex-container {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
+.Valorant-content .Valorant-group-card {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+}
+
+.Valorant-group-card h4 {
+    font-size: var(--fz-lg);
+    max-width: 600px;
+    word-wrap: break-word;
+    margin-bottom: 12px;
+}
+
+.group-card-description {
+    margin-left: 40px;
+    font-size: var(--fz-xs);
+}
+
+.group-card-description-p {
+    margin-bottom: 12px;
+}
+
+.group-card-description-join:hover{
+    background-color: var(--accent-color-tint);
+}
+
+.group-card-description-game {
+    font-size: var(--fz-xs);
+    color: #fafafa;
+    background-color: #464649;
+    border-radius: 20px;
+    padding: .5rem .6rem;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 150px;
+    margin-bottom: 12px;
+}
+
+.group-card-description-join {
+    font-size: var(--fz-xs);
+    color: var(--accent-color);
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: .75rem 1rem;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 150px;
+    margin-bottom: 12px;
+}
+
+.Valorant-inner h2 {
+    margin: 40px 0px;
+}
+
+.Valorant-flex-container .flex-fill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-width: 200px;
+    min-height: 250px;
+    max-width: 200px;
+    max-height: 250px;
+}
+
+.Valorant-flex-container .Valorant-img {
+    object-fit: cover;
+    width: 200px;
+    height: 250px;
+}
