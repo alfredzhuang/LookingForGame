@@ -26,7 +26,7 @@ let create = (props) => {
 
     function handleGroup() {
         if(!isSelectedChange) {
-            setGame("League of Legends");
+            setGame("LeagueofLegends");
         }
         if(game !== ""){
             createGroup();
@@ -59,7 +59,7 @@ let create = (props) => {
                         <div className="create-input-container choose-game">
                             <label htmlFor="game">Choose a Game:</label>
                             <select name="game" id="game" value={game} onChange={handleChange}>
-                                <option value="LeagueofLegends" selected="selected">League of Legends</option>
+                                <option value="LeagueofLegends">League of Legends</option>
                                 <option value="AmongUs">Among Us</option>
                                 <option value="Minecraft">Minecraft</option>
                                 <option value="Genshin">Genshin Impact</option>
