@@ -1,6 +1,5 @@
-import React, { Component, useEffect, useState  } from 'react';
+import React, { useEffect, useState  } from 'react';
 import './App.css';
-//import Profile from "./components/pages/profilepic/Profile";
 import Home from "./components/pages/Home";
 import Signup from "./components/pages/auth/Signup";
 import Login from "./components/pages/auth/Login";
@@ -135,6 +134,138 @@ let getGameGroupAmongUs = () => {
     });
   }
 
+  let joinGroupGenshin = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("Genshin").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
+
+  let joinGroupLeague = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("LeagueofLegends").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
+
+  let joinGroupAmongUs = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("AmongUs").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
+
+  let joinGroupMinecraft = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("Minecraft").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
+
+  let joinGroupPhasmophobia = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("Phasmophobia").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
+
+  let joinGroupSmash = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("Smash").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
+
+  let joinGroupValorant = (groupid) => {
+    firebase.auth().onAuthStateChanged(user => {
+      uid = user.uid;
+    db.collection("Valorant").where('id', '==', groupid).onSnapshot((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(uid);
+        console.log(items[0].id);
+        db.collection("userData").doc(uid).collection("groups").doc(items[0].id).set(items[0]).then(data => {
+          alert(items[0].discord);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }); 
+  });
+  }
 
   let createGroup = () => {
     let owner = user ? user.uid : 'unknown';
@@ -156,11 +287,6 @@ let getGameGroupAmongUs = () => {
           setUrl(url);
           group.url = url;
           db.collection(game).doc(group.id).set(group).catch((err) => {
-            console.log(err);
-          });
-          db.collection("userData").doc(group.owner).collection("groups").doc(group.id).set(group).then(data => {
-            window.location = "homepage";
-          }).catch((err) => {
             console.log(err);
           });
         });
